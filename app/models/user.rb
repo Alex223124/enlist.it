@@ -3,6 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :trackable, :validatable, :omniauthable
 
+  has_many :services
+
   validates :first_name, :last_name, :email, :password, presence: true
 
   def self.from_omniauth(auth)
