@@ -9,6 +9,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'hamlit-rails'
+gem 'chikka'
 
 gem 'devise'
 gem 'omniauth-facebook'
