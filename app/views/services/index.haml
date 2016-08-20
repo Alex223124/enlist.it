@@ -1,0 +1,28 @@
+%h2 Service List
+= link_to 'Add Service', new_service_path
+.services
+  - @services.each do |service|
+    .service
+      .name
+        %label Name
+        = service.name
+      .description
+        %label Description
+        = service.description
+      .notification-date
+        %label Notification Date
+        = service.notification_date
+      .frequency
+        %label Frequency
+        = service.frequency
+      .mobile_number
+        %label Mobile Number
+        = service.mobile_number
+      .custom_message
+        %label Custom Message
+        = service.custom_message
+      .enabled
+        %label Enabled?
+        = service.enabled
+      = link_to 'Edit service', edit_service_path(service)
+      = link_to 'Delete service', service_path(service), method: :delete

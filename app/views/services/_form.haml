@@ -1,0 +1,21 @@
+= form_for @service do |f|
+  .form-group
+    = f.label :name
+    = f.text_field :name, placeholder: 'Service Name', class: 'form-control'
+  .form-group
+    = f.label :description
+    = f.text_area :description, placeholder: 'Service Description', class: 'form-control'
+  .form-group
+    = f.label :notification_date
+    = f.date_field :notification_date, class: 'form-control'
+  .form-group
+    = f.label :frequency
+    = f.select :frequency, Service::FREQUENCY.map{ |x| [x.capitalize, x] }, include_blank: 'Select frequency'
+  .form-group
+    = f.label :mobile_number
+    = f.text_field :mobile_number, placeholder: '09X-XXX-XXXX', class: 'form-control'
+  .form-group
+    = f.label :custom_message
+    = f.text_area :custom_message, placeholder: 'Message', class: 'form-control'
+  .form-group
+    = f.submit

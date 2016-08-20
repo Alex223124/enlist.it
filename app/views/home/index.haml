@@ -1,0 +1,4 @@
+- if current_user
+  = link_to "Signout", destroy_user_session_path, method: :delete
+- else
+  = link_to "Connect with Facebook", user_facebook_omniauth_authorize_path
