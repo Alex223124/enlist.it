@@ -20,8 +20,8 @@
               .header
                 %h3.title= service.name.capitalize
                 .actions
-                  %input#checkbox1.enlist-radio{ checked: 'checked', name: 'enabled', type: 'checkbox' }
-                  %label.checkbox-label{ "data-off" => "OFF", "data-on" => "ON", for: "checkbox1" }
+                  %input{ checked: service.enabled, name: "service_#{service.id}_enabled", type: 'checkbox', id: "service_#{service.id}_enabled", class: 'enlist-radio' }
+                  %label.checkbox-label{ "data-off" => "OFF", "data-on" => "ON", 'data-id' => service.id, for: "service_#{service.id}_enabled" }
               .details
                 .contact
                   %p.field

@@ -10,5 +10,10 @@ Rails.application.routes.draw do
   end
 
   root 'home#index'
-  resources :services, except: [:show, :new, :edit]
+  resources :services, except: [:show, :new, :edit] do
+    member do
+      post :disable
+      post :enable
+    end
+  end
 end

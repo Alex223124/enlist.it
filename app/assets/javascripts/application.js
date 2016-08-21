@@ -24,6 +24,27 @@ $(document).on('ready show.bs closed.bs load page:change', function () {
   $.onmount()
 });
 
+$.onmount('body', function() {
+  $('.services-card .header .actions label').on('click', function(){
+    var id = $(this).data('id');
+    var checkbox = $(this).parent().find('.enlist-radio');
+
+    if ($(checkbox).is(':checked')) {
+      $.ajax({
+        url: '/services/'+ id + '/disable',
+        method: 'POST'
+      });
+      window.reload()
+    } else {
+      $.ajax({
+        url: '/services/'+ id + '/enable',
+        method: 'POST'
+      });
+      window.reload()
+    }
+  });
+});
+
 $.onmount('[role=datetime-picker]', function() {
   $(this).datetimepicker();
 });

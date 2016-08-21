@@ -1,4 +1,5 @@
 class ServicesController < ApplicationController
+  before_action :authenticate_user!
   layout 'dashboard'
 
   def index
@@ -36,6 +37,16 @@ class ServicesController < ApplicationController
     @service.destroy
     flash[:success] = 'Service successfully deleted'
     redirect_to services_path
+  end
+
+  def disable
+    @service = current_user.services.find(params[:id])
+    @service.update(enabled: false)
+  end
+
+  def enable
+    @service = current_user.services.find(params[:id])
+    @service.update(enabled: true)
   end
 
 private
