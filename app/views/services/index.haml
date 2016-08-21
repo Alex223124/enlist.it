@@ -1,28 +1,48 @@
-%h2 Service List
-= link_to 'Add Service', new_service_path
-.services
-  - @services.each do |service|
-    .service
-      .name
-        %label Name
-        = service.name
-      .description
-        %label Description
-        = service.description
-      .notification-date
-        %label Notification Date
-        = service.notification_date
-      .frequency
-        %label Frequency
-        = service.frequency
-      .mobile_number
-        %label Mobile Number
-        = service.mobile_number
-      .custom_message
-        %label Custom Message
-        = service.custom_message
-      .enabled
-        %label Enabled?
-        = service.enabled
-      = link_to 'Edit service', edit_service_path(service)
-      = link_to 'Delete service', service_path(service), method: :delete
+.section-listing
+  .container
+    - if @services.nil?
+      .services.-empty
+        %h2.notice
+          Add a new services
+          %br>
+          Create by tapping on the box buttton below
+        .card-listing
+          .services-card.-new{"data-target" => "#new-service", "data-toggle" => "modal"}
+            %span.btn-add
+              %span.ti-plus
+                %br
+              %p Add new Services
+    - else
+      .services
+        - @services.each do |service|
+          .card-listing
+            .services-card.-enable
+              .header
+                %h3.title= service.name
+                .actions
+                  %input#checkbox1.enlist-radio{ checked: 'checked', name: 'enabled', type: 'checkbox' }
+                  %label.checkbox-label{ "data-off" => "OFF", "data-on" => "ON", for: "checkbox1" }
+              .details
+                .contact
+                  %p.field
+                    %span.lbl Contact No.:
+                    %span.area= service.mobile_number
+                .frequency
+                  %p.field
+                    %span.lbl Frequency:
+                    %span.area= service.frequency
+                .descriptions
+                  %p.message= service.description
+              .footer
+                .delete
+                  = link_to service_path(service), method: :delete do
+                    %i.ti-trash
+                .settings
+                  = link_to '#' do
+                    %i.ti-settings
+        .card-listing
+          .services-card.-new{"data-target" => "#new-service", "data-toggle" => "modal"}
+            .btn-add
+              %span.ti-plus
+              %p Add new Service
+= render 'shared/dashboard/new_service_modal'

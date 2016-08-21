@@ -19,4 +19,8 @@ class User < ApplicationRecord
       user.gender = auth.extra.raw_info.gender
     end
   end
+
+  def fullname
+    "#{first_name} #{last_name}"
+  end
 end

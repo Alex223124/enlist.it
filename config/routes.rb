@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   end
 
   root 'home#index'
-  resources :services, except: :show
+  resources :services, except: [:show, :new, :edit]
 end

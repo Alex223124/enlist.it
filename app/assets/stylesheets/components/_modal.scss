@@ -1,0 +1,41 @@
+.modal {
+  background: linear-gradient(45deg, rgba(#FFED00,0.3) 0%, rgba(#85D209,0.3) 46%, rgba(#17850E,0.3)  100%);
+}
+
+.modal-dialog {
+  margin: 100px auto 0;
+}
+
+// Actual modal
+.modal-content {
+  border: 1px solid #D4D8DF;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(#17850E,.15);
+  background-clip: padding-box;
+  // Remove focus outline from opened modal
+  outline: 0;
+}
+
+.modal-header {
+  background: #FBFBFD;
+  color:  #17850E;
+  border-radius: 8px 8px 0 0;
+  .close  {
+    color: #93989E;
+    outline: 0;
+  }
+}
+
+// Modal background
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zindex-modal-background;
+  background-color: $modal-backdrop-bg;
+  // Fade for backdrop
+  &.fade { @include opacity(0); }
+  &.in { @include opacity($modal-backdrop-opacity); }
+}

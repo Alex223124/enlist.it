@@ -14,4 +14,19 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require moment
+//= require bootstrap-datetimepicker
+//= require onmount
 //= require_tree .
+
+$(document).on('ready show.bs closed.bs load page:change', function () {
+  $.onmount()
+});
+
+$.onmount('#datetimepicker', function() {
+  $(this).datetimepicker();
+});
+
+$.onmount('select', function() {
+  $(this).selectpicker();
+});

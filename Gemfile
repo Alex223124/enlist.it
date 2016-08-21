@@ -14,9 +14,15 @@ gem 'sidekiq'
 gem 'sinatra', github: 'sinatra', require: false
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'autoprefixer-rails'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 
 gem 'devise'
 gem 'omniauth-facebook'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-onmount'
+end
 
 group :development, :test do
   gem 'byebug', platform: :mri

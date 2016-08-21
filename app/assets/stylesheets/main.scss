@@ -1,0 +1,258 @@
+.navbar {
+	margin-bottom: 0;
+	.navbar-brand {
+		height: 70px;
+	}
+}
+
+
+.services {
+	& {
+		@include make-row();
+	}
+	> .card-listing {
+		@include make-lg-column(4);
+		@include make-xs-column(12);
+		@include make-sm-column(6);
+		@include make-md-column(4);
+	}
+
+	&.-empty {
+		> .notice {
+			color: #9B9B9B;
+			font-size: 30px;
+			text-align: center;
+			font-weight: 400;
+			font-family: 'Lato', sans-serif;
+		}
+		> .card-listing {
+			margin: 0 auto;
+			float: none;
+		}
+	}
+}
+
+.services-card {
+	width:100%;
+	margin: 30px auto;
+	background: #fff;
+	border: 1px solid #D4D8DF;
+	border-radius: 8px;
+	min-height: 350px;
+	transition: all 0.25s ease-in-out;
+	> .header {
+		padding: 20px 20px 15px;
+		border-bottom: 1px solid #EFF0F4;
+		height: 70px;
+		> .title {
+			margin: 0;
+			color: #17850E;
+			font-size:  20px;
+			font-family:  'Lato', sans-serif;
+			float:left;
+			width: 75%;
+			margin-top: 4px;
+		}
+		.actions {
+			float: right;
+			width: 25%;
+		}
+	}
+	> .details{
+		clear: both;
+		> .contact, .frequency{
+			padding: 10px 30px;
+			border-bottom: 1px solid #EFF0F4;
+		}
+		> .descriptions {
+			border-bottom: 1px solid #EFF0F4;
+			background: #FBFBFD;
+			padding: 15px 30px;
+			min-height: 173px;
+			.message {
+				color: #4A4A4A;
+				font-size:  16px;
+				font-weight: 400;
+				font-family:  'Lato', sans-serif;
+			}
+		}
+		.field {
+			margin: 0;
+			.lbl {
+				color: #93989E;
+				font-size:  16px;
+				font-weight: 400;
+				font-family:  'Lato', sans-serif;
+			}
+			.area {
+				color: #0F0F0F;
+				font-size:  16px;
+				font-weight: 400;
+				font-family:  'Lato', sans-serif;
+			}
+		}
+	}
+	> .footer {
+		padding: 10px 20px;
+		clear: both;
+		height: 42px;
+		> .delete {
+			font-size: 18px;
+			text-align: left;
+			float:left;
+			text-decoration: none;
+			a {
+				text-decoration: none;
+				color: #D0021B;
+			}
+		}
+		> .settings {
+			font-size: 18px;
+			text-align: right;
+			float: right;
+			text-decoration: none;
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+	&:hover {
+		border: 1px solid #D4D8DF;
+		box-shadow: 0px 2px 10px 0px rgba(22,133,14,0.14);
+	}
+
+	//Variants
+	&.-enable {
+		border: 1px solid #17850E;
+	}
+	&.-disabled {
+		border: 1px solid #D4D8DF;
+		color: #9B9B9B;
+		> .header {
+			> .title {
+				color: #9B9B9B;
+			}
+			.actions {
+				color: #9B9B9B;
+			}
+		}
+		> .details{
+			> .descriptions {
+				background: #FFF;
+				.message {
+					color: #9B9B9B;
+				}
+			}
+			.field {
+				.lbl {
+					color: #9B9B9B;
+				}
+				.area {
+					color: #9B9B9B;
+				}
+			}
+		}
+		> .footer {
+			> .settings {
+				color: #9B9B9B;
+				a {
+					color: #9B9B9B;
+					text-decoration: none;
+				}
+			}
+			> .delete {
+				color: #9B9B9B;
+				a {
+					color: #9B9B9B;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	&.-new {
+		background: linear-gradient(-45deg, rgba(#FFED00,0.5) 0%, rgba(#85D209,0.5) 46%, rgba(#17850E,0.5) 100%);
+		border: 1px solid #D4D8DF;
+		padding: 130px 70px;
+		text-align: center;
+		transition: all 0.25s ease-in-out;
+		.btn-add {
+			color: #17850E;
+			font-size: 20px;
+			text-decoration: none;
+			font-weight: 700;
+			text-transform: uppercase;
+			transition: all 0.25s ease-in-out;
+			.ti-plus {
+				font-size: 45px;
+				font-weight: 700;
+			}
+		}
+		&:hover .btn-add {
+			color: #fff;
+		}
+		&:hover {
+			border: 1px solid #0F0F0F;
+			background: #17850E;
+		}
+	}
+}
+
+.section-hero{
+	width: 100%;
+	background: #22BB11;
+	padding: 10px 0;
+	.hero-caption {
+		@include make-lg-column(5);
+		@include make-xs-column(12);
+		@include make-sm-column(12);
+		@include make-md-column(5);
+		.caption {
+			color: #fff;
+			font-size:45px;
+			font-weight: 700;
+			margin-top: 90px;
+			font-family: 'Monda', san-serif;
+			letter-spacing: 1px;
+		}
+		.description {
+			margin-top: 20px;
+			font-size: 20px;
+			line-height: 30px;
+			font-weight: 400;
+			color: #fff;
+		}
+	}
+	.hero-images  {
+		text-align: center;
+		@include make-lg-column(7);
+		@include make-xs-column(12);
+		@include make-sm-column(12);
+		@include make-md-column(7);
+		img {
+			width: 100%;
+		}
+	}
+}
+
+.section-features {
+	width: 100%;
+	background: #17850E;
+	padding: 20px 0;
+	.featured-lisitng {
+		@include make-lg-column(3);
+		@include make-xs-column(12);
+		@include make-sm-column(6);
+		@include make-md-column(3);
+		text-align: center;
+		@media (min-width: $screen-xs-min) and (max-width: $screen-sm-max) {
+			margin-bottom: 20px;
+		}
+		.title {
+			color: #fff;
+			text-transform: uppercase;
+			font-size: 20px;	
+		}
+	}
+}
+

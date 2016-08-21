@@ -1,0 +1,174 @@
+.form-group {
+	margin-bottom: 0;
+	padding: 10px 0;
+	&:first-child { border-color: transparent; }
+}
+
+.form-control {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border-width: 1px;
+	min-height: 40px;
+	height: auto;
+	border-radius: 3px;
+	&:focus {
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		background: rgba(#17850E, 0.1);
+		border-color: #17850E;
+	}
+}
+.form-vertical {
+	counter-reset: fieldset;
+
+	fieldset {
+		padding-top: 10px;
+		margin: 50px 0;
+
+		> legend:before {
+			content: counter(fieldset);
+			counter-increment: fieldset;
+			position: absolute;
+			left: -25px;
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			border-radius: 15px;
+			text-align: center;
+			background: $brand-primary;
+			color: white;
+			font-size: 75%;
+			font-weight: bold;
+		}
+	}
+}
+
+label {
+	&.checkbox {
+		margin-bottom: 15px;
+		position: relative;
+
+		.icheckbox_square-blue {
+			position: absolute;
+			top: 0; left: 0;
+		}
+		input {
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		span {
+			padding-left: 35px;
+			display: block;
+		}
+	}
+}
+
+.radio {
+	label {
+		padding-left: 0;
+	}
+	span {
+		vertical-align: middle;
+		margin-left: 5px;
+	}
+}
+
+.btn {
+	height: 40px;
+	padding: 10px 16px;
+	border-radius: 3px;
+	min-width: 80px;
+}
+
+.btn-group.radio-group {
+	.btn {
+		height: 50px;
+		line-height: 22px;
+		padding: 12px 20px;
+		span {
+			line-height: 22px;
+			vertical-align: middle;
+			margin-left: 5px;
+		}
+	}
+}
+
+
+/* bootstrap select styles */
+.bootstrap-select {
+	.btn {
+		min-height: 40px;
+		border-width: 1px;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		outline: 0;
+		&:hover { background: white; }
+		&:focus {
+			outline: 0;
+		}
+	}
+	outline: 0;
+}
+.bootstrap-select .btn:focus,
+.bootstrap-select.btn-group.open .dropdown-toggle {
+	border-color: $brand-primary;
+	//    background: $brand-primary;
+	//    color: white;
+	background: white;
+	outline: 0;
+}
+.bootstrap-select .btn.bootstrap-select.btn-group.open .dropdown-toggle {
+	border-color: $brand-primary;
+	color: white;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.bootstrap-select .dropdown-toggle:focus {
+	outline: 0 !important;
+}
+
+.bootstrap-select.btn-group .dropdown-menu {
+	left: 16px;
+	min-width: 270px;
+}
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus {
+	background: $brand-primary;
+	color: white;
+}
+
+
+.bootstrap-select.btn-group .dropdown-toggle .caret {
+	top: 65%;
+	right: 25px;
+}
+
+label { 
+	cursor: pointer;
+	color:  #17850E;
+}
+:-ms-input-placeholder { color:#93989E; }
+::-moz-placeholder { color:#93989E; }
+::-webkit-input-placeholder { color:#93989E; }
+
+
+.bootstrap-datetimepicker-widget button[data-action] {
+	min-width: 54px;
+}
+
+.btn-facebook {
+	border-radius: 25px;
+	border: 1px solid #FFF;
+	margin-top: 15px;
+	padding: 8px 20px !important;
+	font-size: 16px;
+	height: auto;
+	transition: all 0.25s ease-in-out;
+	&:hover, &:focus {
+		background-color: #3B5998 !important;
+		border: 1px solid #3B5998;
+		color: #fff;
+	}
+}

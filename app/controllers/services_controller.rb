@@ -1,11 +1,9 @@
 class ServicesController < ApplicationController
+  layout 'dashboard'
 
   def index
     @services = current_user.services
-  end
-
-  def new
-    @service = current_user.services.new
+    @service = Service.new(user: current_user)
   end
 
   def create
@@ -19,10 +17,6 @@ class ServicesController < ApplicationController
       flash[:error] = @service.errors.full_messages
       render :new
     end
-  end
-
-  def edit
-    @service = current_user.services.find(params[:id])
   end
 
   def update

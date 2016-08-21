@@ -3,7 +3,8 @@ class Service < ApplicationRecord
 
   belongs_to :user
 
-  validates :name, :notification_date, :mobile_number, presence: true
+  validates :notification_date, :mobile_number, presence: true
+  validates :name, presence: true, uniqueness: true
   validates :frequency, presence: true, inclusion: { in: FREQUENCY }
   validates :description, presence: true, length: { maximum: 140 }
   validates :custom_message, length: { maximum: 140 }
