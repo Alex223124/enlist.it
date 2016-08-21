@@ -12,6 +12,7 @@ class ServicesController < ApplicationController
     @service = current_user.services.new(service_params)
 
     if @service.save
+      NotificationWorker.perform_async(@service.id)
       flash[:success] = 'Service successfully added'
       redirect_to services_path
     else

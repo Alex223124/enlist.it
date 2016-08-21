@@ -9,7 +9,7 @@ class Service < ApplicationRecord
   validates :custom_message, length: { maximum: 140 }
 
   def notify_service
-    message = custom_message.empty? ? "I need a #{name}" : custom_message
+    message = custom_message.empty? ? "I need a #{name}. Kindly deliver at #{user.address} and look for #{user.first_name} #{user.last_name}" : custom_message
     client = Chikka::Client.new(client_id: "#{Rails.application.secrets.chikka_client_id}",
                                 secret_key: "#{Rails.application.secrets.chikka_secret_key}",
                                 shortcode: "#{Rails.application.secrets.chikka_shortcode}")
@@ -17,7 +17,7 @@ class Service < ApplicationRecord
   end
 
   def notify_user
-    message = "You are running out of #{name}, but don't worry I will order it for you in the next five days."
+    message = "You are running out of #{name}, but don't worry I will order it for you in the next five minutes."
     client = Chikka::Client.new(client_id: "#{Rails.application.secrets.chikka_client_id}",
                                 secret_key: "#{Rails.application.secrets.chikka_secret_key}",
                                 shortcode: "#{Rails.application.secrets.chikka_shortcode}")

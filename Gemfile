@@ -10,6 +10,8 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'hamlit-rails'
 gem 'chikka'
+gem 'sidekiq'
+gem 'sinatra', github: 'sinatra', require: false
 
 gem 'devise'
 gem 'omniauth-facebook'
