@@ -24,7 +24,7 @@ $(document).on('ready show.bs closed.bs load page:change', function () {
   $.onmount()
 });
 
-$.onmount('#datetimepicker', function() {
+$.onmount('[role=datetime-picker]', function() {
   $(this).datetimepicker();
 });
 

@@ -15,8 +15,8 @@
               .col-lg-6
                 .form-group
                   = f.label :notification_date
-                  #datetimepicker.input-group.date
-                    = f.text_field :notification_date, class: 'form-control'
+                  #datetimepicker.input-group.date{ role: 'datetime-picker' }
+                    = f.text_field :notification_date, class: 'form-control', placeholder: 'Select Date'
                     %span.input-group-addon
                       %span.ti-calendar
               .col-lg-6
@@ -29,6 +29,9 @@
             .form-group
               = f.label :description
               = f.text_area :description, placeholder: 'Short Description', class: 'form-control'
+            .form-group
+              = f.label :custom_message
+              = f.text_area :custom_message, placeholder: 'Leave this blank if you want to use the default', class: 'form-control'
             .form-group.clearfix
               .pull-right
                 %button{ 'data-dismiss' => 'modal', type: 'button', class: 'btn btn-default' } Cancel
