@@ -46,7 +46,9 @@ $.onmount('body', function() {
 });
 
 $.onmount('[role=datetime-picker]', function() {
-  $(this).datetimepicker();
+  $(this).datetimepicker({
+    format: 'DD/MM/YYYY'
+  });
 });
 
 $.onmount('select', function() {
