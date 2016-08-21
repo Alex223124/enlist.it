@@ -1,4 +1,23 @@
-- if current_user
-  = link_to "Signout", destroy_user_session_path, method: :delete
-- else
-  = link_to "Connect with Facebook", user_facebook_omniauth_authorize_path
+%section.section-hero
+  .container
+    .row
+      .hero-caption
+        %h1.caption Enlist.it,  Aggregate &amp; Automate!
+        %p.description Enables you to automate on time to any services you frequently subscribe. And let it do your routine services.
+      .hero-images
+        = image_tag 'hero-image.png', class: 'img-responsive'
+%section.section-features
+  .container
+    .row
+      .featured-lisitng
+        = image_tag 'icn-access.png'
+        %h3.title Access
+      .featured-lisitng
+        = image_tag 'icn-settings.png'
+        %h3.title Add Services
+      .featured-lisitng
+        = image_tag 'icn-frequency.png'
+        %h3.title Set frequency
+      .featured-lisitng
+        = image_tag 'icn-automate.png'
+        %h3.title Automate

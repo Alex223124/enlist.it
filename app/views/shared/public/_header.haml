@@ -1,0 +1,22 @@
+%header.header
+  %nav.navbar.navbar-default.navbar-static-top{:role => "navigation"}
+    / Brand and toggle get grouped for better mobile display
+    .container
+      .navbar-header
+        %button.navbar-toggle{"data-target" => "#navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand{:href => "/"}
+          = image_tag 'logo.png', height: 30
+      / Collect the nav links, forms, and other content for toggling
+      #navbar-collapse.collapse.navbar-collapse
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            - if current_user
+              = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-facebook'
+            - else
+              = link_to user_facebook_omniauth_authorize_path, class: 'btn btn-facebook' do
+                %i.ti-facebook
+                Login with Facebook

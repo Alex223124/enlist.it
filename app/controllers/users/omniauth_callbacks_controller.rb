@@ -4,10 +4,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     if @user.persisted?
       flash[:success] = 'Signed in successfully.'
-      sign_in_and_redirect @user, event: :authentication
+      sign_in @user, event: :authentication
+      redirect_to services_path
     else
       flash[:error] = 'Something went wrong.'
-      redirect_to new_user_session_path
+      redirect_to root_path
     end
   end
 end
