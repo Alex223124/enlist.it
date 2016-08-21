@@ -12,6 +12,8 @@ gem 'hamlit-rails'
 gem 'chikka'
 gem 'sidekiq'
 gem 'sinatra', github: 'sinatra', require: false
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'autoprefixer-rails'
 
 gem 'devise'
 gem 'omniauth-facebook'
