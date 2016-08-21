@@ -129,20 +129,10 @@ label {
 	outline: 0 !important;
 }
 
-.bootstrap-select.btn-group .dropdown-menu {
-	left: 16px;
-	min-width: 270px;
-}
 .dropdown-menu>li>a:hover,
 .dropdown-menu>li>a:focus {
 	background: $brand-primary;
 	color: white;
-}
-
-
-.bootstrap-select.btn-group .dropdown-toggle .caret {
-	top: 65%;
-	right: 25px;
 }
 
 label { 

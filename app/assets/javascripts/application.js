@@ -28,18 +28,23 @@ $.onmount('body', function() {
   $('.services-card .header .actions label').on('click', function(){
     var id = $(this).data('id');
     var checkbox = $(this).parent().find('.enlist-radio');
+    var card = $(this).parent().parent().parent();
 
     if ($(checkbox).is(':checked')) {
       $.ajax({
         url: '/services/'+ id + '/disable',
         method: 'POST'
       });
+      $(card).removeClass('-enable');
+      $(card).addClass('-disabled');
       window.reload()
     } else {
       $.ajax({
         url: '/services/'+ id + '/enable',
         method: 'POST'
       });
+      $(card).addClass('-enable');
+      $(card).removeClass('-disabled');
       window.reload()
     }
   });
