@@ -15,7 +15,7 @@ class ServicesController < ApplicationController
       redirect_to services_path
     else
       flash[:error] = @service.errors.full_messages
-      render :new
+      redirect_to services_path
     end
   end
 
@@ -34,7 +34,7 @@ class ServicesController < ApplicationController
   def destroy
     @service = current_user.services.find(params[:id])
     @service.destroy
-
+    flash[:success] = 'Service successfully deleted'
     redirect_to services_path
   end
 

@@ -1,0 +1,11 @@
+- flash.each do |name, message|
+  - if name == 'notice'
+    - name = 'success'
+  - elsif name == 'alert' 
+    - name = 'error'
+
+  :javascript
+    toastr.options = {
+      'positionClass': 'toast-bottom-left'
+    }
+    toastr.#{name}("#{message}")

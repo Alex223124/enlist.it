@@ -16,6 +16,7 @@
 //= require bootstrap-sprockets
 //= require moment
 //= require bootstrap-datetimepicker
+//= require toastr
 //= require onmount
 //= require_tree .
 
